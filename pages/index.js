@@ -18,6 +18,7 @@ export default function Home() {
     const data = await response.json();
     setResult(data.result);
     setAnimalInput("");
+    console.log(animalInput);
   }
 
   return (
@@ -29,18 +30,18 @@ export default function Home() {
 
       <main className={styles.main}>
         <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
+        <h3>Some app</h3>
         <form onSubmit={onSubmit}>
           <input
             type="text"
             name="animal"
-            placeholder="Enter an animal"
+            placeholder="Text Input"
             value={animalInput}
             onChange={(e) => setAnimalInput(e.target.value)}
           />
           <input type="submit" value="Generate names" />
         </form>
-        <div className={styles.result}>{result}</div>
+        <div className={styles.result}> <a>{result}</a></div>
       </main>
     </div>
   );
